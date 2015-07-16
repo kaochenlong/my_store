@@ -1,5 +1,7 @@
 just an empty Rails App project
 
+please rename config/application.yml.sample to application.yml, and set your own data
+
 contact: eddie@5xruby.tw
 
 ## Version
