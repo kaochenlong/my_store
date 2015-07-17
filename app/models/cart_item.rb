@@ -7,4 +7,7 @@ class CartItem
     @quantity = quantity
   end
 
+  def product
+    Product.find_by(id: @id)
+  end
 end
