@@ -48,4 +48,27 @@ class CartTest < ActiveSupport::TestCase
     assert_equal 70, cart.total_price
   end
 
+  test "cart can serialize to hash" do
+    cart = Cart.new
+    cart.add_item 1
+    cart.add_item 1
+    cart.add_item 1
+    cart.add_item 2
+    cart.add_item 2
+    assert_equal session_hash, cart.serialize
+  end
+
+  test "cart can build from hash" do
+  end
+
+  private
+  def session_hash
+    {
+      "items" =>  [
+        { "id" => 1, "quantity" => 3},
+        { "id" => 2, "quantity" => 2}
+      ]
+    }
+  end
+
 end

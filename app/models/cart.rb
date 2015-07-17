@@ -5,6 +5,14 @@ class Cart
     @items = []
   end
 
+  def serialize
+    serialized_items = @items.map { |item| { "id" => item.id , "quantity" => item.quantity } }
+
+    {
+      "items" => serialized_items
+    }
+  end
+
   def add_item(id)
     item = @items.find { |t| t.id == id }
     if item
