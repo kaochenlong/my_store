@@ -59,6 +59,9 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can build from hash" do
+    cart = Cart.build_from_hash(session_hash)
+    assert_equal 1, cart.items.first.id
+    assert_equal 2, cart.items.second.quantity
   end
 
   private
