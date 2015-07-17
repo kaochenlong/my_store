@@ -17,4 +17,14 @@ class Cart
   def empty?
     @items.empty?
   end
+
+  def total_price
+    @items.inject(0) { |sum, item| sum + item.price }
+
+    #total = 0
+    #@items.each do |item|
+      #total += item.price
+    #end
+    #return total
+  end
 end

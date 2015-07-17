@@ -32,4 +32,20 @@ class CartTest < ActiveSupport::TestCase
     assert_kind_of Product, cart.items.first.product
   end
 
+  test "cart can calculate total price itself" do
+    cart = Cart.new
+
+    p1 = Product.create(name:'ruby book', price:10)
+    p2 = Product.create(name:'php book', price:20)
+
+    3.times do
+      cart.add_item(p1.id)
+    end
+    2.times do
+      cart.add_item(p2.id)
+    end
+
+    assert_equal 70, cart.total_price
+  end
+
 end
