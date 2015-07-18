@@ -16,6 +16,9 @@ class CartsController < ApplicationController
     redirect_to root_path, notice: '購物車已清空'
   end
 
+  def checkout
+  end
+
   private
   def find_product
     @product = Product.find_by(id: params[:id])
