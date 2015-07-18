@@ -30,6 +30,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to '購物車', cart_path %></li>
+
         <li class="dropdown">
         <% if user_signed_in? %>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>

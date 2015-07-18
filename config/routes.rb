@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   resources :products, only:[:index, :show]
 
+  resource :cart, only: [:show] do
+    post :add, path:'/add/:id'
+    get :checkout
+  end
+
   namespace :admin do
     resources :products
   end
