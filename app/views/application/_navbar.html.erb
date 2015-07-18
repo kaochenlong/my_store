@@ -30,7 +30,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to '購物車', cart_path %></li>
+        <li><%= link_to "購物車 <span class='badge'>#{@cart.items.count}</span>".html_safe , cart_path %></li>
 
         <li class="dropdown">
         <% if user_signed_in? %>
