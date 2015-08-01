@@ -21,15 +21,7 @@
       <td><%= order.tel %></td>
       <td><%= order.email %></td>
       <td><%= order.state_readable %></td>
-      <td>
-        <% if order.pending? %>
-          <%= link_to 'pay', pay_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
-        <% elsif order.paid? %>
-          <%= link_to 'out', out_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
-        <% elsif order.out? %>
-          <%= link_to 'deliver', deliver_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
-        <% end %>
-      </td>
+      <td><%= render 'order_button', {order: order} %></td>
     </tr>
   <% end %>
   </tbody>

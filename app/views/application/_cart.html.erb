@@ -1,6 +1,6 @@
 <%= link_to cart_path do %>
   購物車
-  <% if @cart && !@cart.empty? %>
-   <span class="badge"><%= @cart.items.count %></span>
+  <% if cart && !cart.empty? %>
+   <span class="badge"><%= cart.items.count %></span>
   <% end %>
 <% end %>
