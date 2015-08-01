@@ -1,1 +1,28 @@
 <h1>訂單管理</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td>訂單編號</td>
+      <td>收件人姓名</td>
+      <td>收件人地址</td>
+      <td>電話</td>
+      <td>Email</td>
+      <td>狀態</td>
+      <td>處理</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.order_number %></td>
+      <td><%= order.recipient %></td>
+      <td><%= order.address %></td>
+      <td><%= order.tel %></td>
+      <td><%= order.email %></td>
+      <td><%= order.state_readable %></td>
+      <td>  </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
