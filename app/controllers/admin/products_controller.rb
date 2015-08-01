@@ -1,7 +1,5 @@
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < Admin::BaseController
 
-  before_action :authenticate_user!
-  before_action :admin_only!
   before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -47,9 +45,5 @@ class Admin::ProductsController < ApplicationController
 
   def find_product
     @product = Product.find_by(id: params[:id])
-  end
-
-  def admin_only!
-    redirect_to root_path, notice:'your access is not allowed!' unless current_user.is_admin?
   end
 end
