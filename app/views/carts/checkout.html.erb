@@ -2,3 +2,14 @@
 
 <%= render 'carts' %>
 
+<%= simple_form_for(@order) do |f| %>
+
+  <%= f.input :recipient, label: false, placeholder:'收件人姓名' %>
+  <%= f.input :address, label: false, placeholder:'收件人地址'  %>
+  <%= f.input :tel, label: false, placeholder:'聯絡電話' %>
+  <%= f.input :email, label: false, placeholder:'Email' %>
+  <%= f.input :note, label: false, placeholder:'備註' %>
+  <%= f.submit %>
+
+<% end %>
+
