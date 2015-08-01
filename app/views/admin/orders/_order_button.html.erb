@@ -1,7 +1,7 @@
 <% if order.pending? %>
-  <%= link_to 'pay', pay_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
+  <%= link_to '付款', pay_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
 <% elsif order.paid? %>
-  <%= link_to 'out', out_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
+  <%= link_to '出貨', out_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
 <% elsif order.out? %>
-  <%= link_to 'deliver', deliver_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
+  <%= link_to '收貨', deliver_admin_order_path(order), method:'put', class:'btn btn-xs btn-danger' %>
 <% end %>
