@@ -3,6 +3,11 @@ defaults: &defaults
     APP_ID: YOUR_ID
     APP_SECRET: YOUR_SECRET
 
+  Braintree:
+    MERCHANT_ID: "your id"
+    PUBLIC_KEY: "your public key"
+    PRIVATE_KEY: "your private key"
+
 development:
   <<: *defaults
   neat_setting: 800
