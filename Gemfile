@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'braintree'
 
+gem 'state_machine'
+
 # bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801020217) do
+ActiveRecord::Schema.define(version: 20150801040137) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 20150801020217) do
     t.string   "tel"
     t.string   "email"
     t.text     "note"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "state",      default: "pending"
   end
 
   create_table "products", force: :cascade do |t|
